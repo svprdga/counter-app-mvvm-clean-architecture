@@ -1,4 +1,4 @@
-name: counter_app_domain
+name: domain
 description: Domain layer of the counter app.
 #version: 1.0.0
 
