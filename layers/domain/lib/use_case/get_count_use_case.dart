@@ -1,7 +1,8 @@
 import 'package:domain/core/base_use_case.dart';
+import 'package:domain/model/count.dart';
 import 'package:domain/repository/counter_repository.dart';
 
-class GetCountUseCase<Count> implements NoParamsUseCase<Count> {
+class GetCountUseCase implements NoParamsUseCase<Count> {
   // ***************************** INJECTED VARS *************************** //
 
   final CounterRepository _counterRepository;

@@ -51,6 +51,7 @@ class _MainScreenState extends State<MainScreen> {
             floatingActionButton: FloatingActionButton(
               onPressed: _viewModel.addCount,
               tooltip: 'Increment',
+              child: const Icon(Icons.add),
             ),
           ),
         ));

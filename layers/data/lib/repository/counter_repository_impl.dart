@@ -3,7 +3,6 @@ import 'package:domain/model/count.dart';
 import 'package:domain/repository/counter_repository.dart';
 
 class CounterRepositoryImpl implements CounterRepository {
-
   // ***************************** INJECTED VARS *************************** //
 
   final MemoryDatasource _memoryDatasource;
@@ -21,7 +20,7 @@ class CounterRepositoryImpl implements CounterRepository {
   }
 
   @override
-  Future<void> setCount(Count count) async{
+  Future<void> setCount(Count count) async {
     _memoryDatasource.count = count.currentCount;
   }
 }

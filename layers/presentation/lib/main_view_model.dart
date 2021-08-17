@@ -22,7 +22,8 @@ class MainViewModel extends ChangeNotifier {
 
   Future<void> addCount() async {
     await _addCountUseCase.execute();
-    _count ++;
+    final count = await _getCountUseCase.execute();
+    _count = count.currentCount;
     notifyListeners();
   }
 }
