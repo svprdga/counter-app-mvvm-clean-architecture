@@ -3,5 +3,5 @@ import 'package:domain/model/count.dart';
 abstract class CounterRepository {
   Future<Count> getCount();
 
-  void setCount(Count count);
+  Future<void> setCount(Count count);
 }

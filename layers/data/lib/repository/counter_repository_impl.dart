@@ -17,11 +17,11 @@ class CounterRepositoryImpl implements CounterRepository {
   @override
   Future<Count> getCount() async {
     final currCount = _memoryDatasource.count;
-    return Count(currentCount: currCount);
+    return Future.value(Count(currentCount: currCount));
   }
 
   @override
-  void setCount(Count count) {
+  Future<void> setCount(Count count) async{
     _memoryDatasource.count = count.currentCount;
   }
 }

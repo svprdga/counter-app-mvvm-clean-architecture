@@ -1,19 +1,22 @@
 import 'package:domain/core/base_use_case.dart';
+import 'package:domain/model/count.dart';
 import 'package:domain/repository/counter_repository.dart';
 
-class GetCountUseCase<Count> implements NoParamsUseCase<Count> {
+class AddCountUseCase implements NoParamsNoResultUseCase {
   // ***************************** INJECTED VARS *************************** //
 
   final CounterRepository _counterRepository;
 
   // ***************************** CONSTRUCTORS **************************** //
 
-  GetCountUseCase(this._counterRepository);
+  AddCountUseCase(this._counterRepository);
 
   //***************************** PUBLIC METHODS *************************** //
 
   @override
-  Future<Count> execute() async {
-    return _counterRepository.getCount();
+  Future<void> execute() async {
+    final currCount = await _counterRepository.getCount();
+    final newCount = Count(currentCount: currCount.currentCount + 1);
+    await _counterRepository.setCount(newCount);
   }
 }
